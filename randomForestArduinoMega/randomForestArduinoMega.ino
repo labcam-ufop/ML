@@ -25,8 +25,10 @@
 float x[] = { 1.79000000, 66.4000000, 2539.80767, 37.2699443, 32.3173639, 7.03200000 };
 
 void setup() {
-  Serial.begin(9600);
-  while (!Serial) {}
+  Serial.begin(115200);
+  while (!Serial) {
+    delay(10);
+  }
 
 #ifdef USE_RANDOM_FOREST_5
   evaluateModel("Random Forest 5", predict_random_forest5);
